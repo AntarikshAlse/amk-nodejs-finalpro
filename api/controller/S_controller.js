@@ -9,12 +9,7 @@ exports.get_student = async(req,res,next)=>{
     try{
         const data =await Student.find();
         if(data){
-            res.status(200).json({
-                code:1,
-                data:data,
-                message:null,
-                error:null
-            })
+            res.status(200).json(data)
         }else{
             res.status(404).json({
                 code:0,
@@ -55,7 +50,7 @@ exports.create_student = async(req,res,next)=>{
            // }
 
        const student = new Student({
-               _id:mongoose.Types.ObjectId(),
+      _id:mongoose.Types.ObjectId(),
       name:req.body.name,
       email:req.body.email,
       mobileNo:req.body.mobileNo,
@@ -93,12 +88,7 @@ exports.get_student_byId = async(req,res,next)=>{
     try{
         const data =await Student.findById(req.params.studentId);
         if(data){
-            res.status(200).json({
-                code:1,
-                data:data,
-                message:null,
-                error:null
-            })
+            res.status(200).json(data)
         }else{
             res.status(404).json({
                 code:0,

@@ -5,12 +5,7 @@ exports.get_institute = async (req, res, next) => {
     try {
         const data = await Institute.find();
         if (data) {
-            res.status(200).json({
-                code: 1,
-                data: data,
-                error: null,
-                message: null
-            })
+            res.status(200).json(data)
         }else{
             res.status(404).json({
                 code: 0,
@@ -59,12 +54,7 @@ exports.get_institute_byId = async(req,res,next)=>{
     try{
         const data =await Institute.findById(req.params.instituteId);
         if(data){
-            res.status(200).json({
-                code:1,
-                data:data,
-                message:null,
-                error:null
-            })
+            res.status(200).json(data)
         }else{
             res.status(404).json({
                 code:0,

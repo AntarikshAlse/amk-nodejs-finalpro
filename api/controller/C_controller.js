@@ -7,12 +7,7 @@ exports.get_course = async(req,res,next)=>{
     try{
     const data =await Course.find();
     if(data){
-        res.status(200).json({
-            code:1,
-            data:data,
-            message:null,
-            error:null
-        })
+        res.status(200).json(data)
     }else{
         res.status(404).json({
             code:0,
@@ -62,12 +57,7 @@ exports.get_course_byId = async(req,res,next)=>{
     try{
         const data =await Course.findById(req.params.courseId);
         if(data){
-            res.status(200).json({
-                code:1,
-                data:data,
-                message:null,
-                error:null
-            })
+            res.status(200).json(data)
         }else{
             res.status(404).json({
                 code:0,
