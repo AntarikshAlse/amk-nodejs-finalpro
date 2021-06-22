@@ -37,8 +37,8 @@ router.get('/',async(req,res,next)=>{
 router.post('/signup', async (req, res, next) => {
     
     try {
-        const userEmail = await User.find({email:req.body.email})
-        if(userEmail.length>=1){
+        const userName = await User.find({userName: req.body.userName})
+        if(userName.length>=1){
             res.status(422).json({
                 message:"email already exist"
             })
@@ -52,7 +52,7 @@ router.post('/signup', async (req, res, next) => {
             } else {
                 const data = new User({
                     _id: mongoose.Types.ObjectId(),
-                    email: req.body.email,
+                    userName: req.body.userName,
                     password: hash
                 })
                 const userData = data.save();
