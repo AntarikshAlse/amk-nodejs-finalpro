@@ -1,0 +1,6 @@
+db userid n pass===nodejs-institute
+
+mongodb+srv://nodejs-institute:<password>@cluster0.tpscu.mongodb.net/test
+
+api url:
+mongodb+srv://nodejs-institute:nodejs-institute@cluster0.tpscu.mongodb.net/test
