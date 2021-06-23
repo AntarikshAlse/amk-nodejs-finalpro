@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 //handling CORS error
 app.use((req,res,next)=>{
     res.header("Access-Control-Allow-Origin","*");
-    res.header("Access-Control-Allow-Headers",'Origin,X-Requested-With,Content-Type,application/x-www-form-urlencoded,Authorization,Accept');
+    res.header("Access-Control-Allow-Headers",'Origin,X-Requested-With,Content-Type,application/json,Authorization,Accept');
         res.header("Access-Control-Allow-Methods","PUT,POST,PATCH,OPTIONS,DELETE,GET");
         // return res.status(200).json();
     next();
