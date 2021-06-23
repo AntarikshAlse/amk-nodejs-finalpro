@@ -10,6 +10,8 @@ router.post("/",controller.create_student);
 
 router.get("/:studentId",controller.get_student_byId);
 
+router.put("/:studentId", controller.update_student);
+
 router.delete("/:studentId",controller.delete);
 
 

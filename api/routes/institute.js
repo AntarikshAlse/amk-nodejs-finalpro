@@ -9,6 +9,8 @@ router.post("/",controller.create_institute);
 
 router.get("/:instituteId",controller.get_institute_byId);
 
+router.put("/:instituteId", controller.update_institute);
+
 router.delete("/:instituteId",controller.delete);
 
 module.exports = router;

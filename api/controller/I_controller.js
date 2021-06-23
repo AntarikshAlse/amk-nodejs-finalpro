@@ -73,6 +73,27 @@ exports.get_institute_byId = async(req,res,next)=>{
     }
 };
 
+exports.update_institute = async (req, res, next) => {
+    try {
+      const data = await Institute.findByIdAndUpdate(
+        req.params.instituteId,
+        req.body,
+        { new: true, runValidators: true }
+      );
+      res.status(200).json({
+        code: 1,
+        data: data
+      });
+    } catch (err) {
+      res.status(500).json({
+        code: 0,
+        data: null,
+        message: "Somthing went wrong while updating institute data",
+        error: err,
+      });
+    }
+  };
+
 exports.delete = async(req,res,next)=>{
     try{
         const data = await Institute.findByIdAndDelete(req.params.instituteId);

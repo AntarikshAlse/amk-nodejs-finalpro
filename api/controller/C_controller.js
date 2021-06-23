@@ -76,6 +76,27 @@ exports.get_course_byId = async(req,res,next)=>{
     }
 };
 
+exports.update_course = async (req, res, next) => {
+    try {
+      const data = await Course.findByIdAndUpdate(
+        req.params.courseId,
+        req.body,
+        { new: true, runValidators: true }
+      );
+      res.status(200).json({
+        code: 1,
+        data: data
+      });
+    } catch (err) {
+      res.status(500).json({
+        code: 0,
+        data: null,
+        message: "Somthing went wrong while updating course data",
+        error: err,
+      });
+    }
+  };
+
 exports.delete_byId = async(req,res,next)=>{
     try{
         const data = await Course.findByIdAndDelete(req.params.courseId);
